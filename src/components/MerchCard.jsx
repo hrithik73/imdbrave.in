@@ -1,11 +1,10 @@
 import React from "react"
-import Link from "next/link"
 
 const MerchCard = ({ item }) => {
   //   console.log(item)
   return (
     <div className="py-6">
-      <div className="flex  max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
+      <div className="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="w-1/3 bg-cover bg-local">
           <img src={item.imgURL} />
         </div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-
 import { collection, getDocs } from "firebase/firestore"
 
 import { db } from "../src/utility/Firebase"
@@ -28,14 +27,16 @@ const Merch = () => {
     return null
   }
   return (
-    <div className="">
+    <>
       <Header />
-      <div className="flex-row justify-center align-center">
-        {data.map((item) => {
-          return <MerchCard item={item} />
-        })}
-      </div>
-    </div>
+      {data.map((item) => {
+        return (
+          <div className="lg:flex-row justify-center align-center">
+            <MerchCard item={item} />
+          </div>
+        )
+      })}
+    </>
   )
 }
 export default Merch

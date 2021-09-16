@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react"
-import { collection, getDocs } from "firebase/firestore"
+import { collection, getDocs, orderBy } from "firebase/firestore"
 
 import { db } from "../src/utility/Firebase"
 import Header from "../src/components/Header"
 import MerchCard from "../src/components/MerchCard"
+import { merch } from "../src/data/data"
 
 const Merch = () => {
   const [data, setdata] = useState([])
-  console.log(data)
 
   const fetchData = async () => {
     const querySnapshot = await getDocs(collection(db, "merchData"))
@@ -29,13 +29,14 @@ const Merch = () => {
   return (
     <>
       <Header />
-      {data.map((item) => {
-        return (
-          <div className="lg:flex-row justify-center align-center">
-            <MerchCard item={item} />
-          </div>
-        )
-      })}
+      <div className="lg:flex flex-wrap justify-center align-center flex-1">
+        <MerchCard item={merch.first} />
+        <MerchCard item={merch.second} />
+        <MerchCard item={merch.third} />
+        {data.map((item) => {
+          return <MerchCard item={item} key={item.imgURL} />
+        })}
+      </div>
     </>
   )
 }

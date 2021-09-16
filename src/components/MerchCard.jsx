@@ -3,7 +3,7 @@ import React from "react"
 const MerchCard = ({ item }) => {
   //   console.log(item)
   return (
-    <div className="py-6">
+    <div className="m-10">
       <div className="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="w-1/3 bg-cover bg-local">
           <img src={item.imgURL} />
@@ -44,7 +44,7 @@ const MerchCard = ({ item }) => {
             </svg>
           </div>
           <div className="flex item-center justify-between mt-3">
-            <h1 className="text-gray-700 font-bold text-xl">{item.price}</h1>
+            <h1 className="text-gray-700 font-bold text-xl">₹{item.price}</h1>
 
             <button
               className="px-3 py-2 bg-gray-800 text-white text-xs font-bold uppercase rounded"

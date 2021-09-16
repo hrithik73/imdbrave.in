@@ -13,77 +13,28 @@ export const socialData = {
  live: "https://youtu.be/x9FNl7xUwcI"
 }
 
-const merch = [
- {
-  id: "01",
+export const merch = {
+ first: {
   title: "T-Shirt",
-  img: "merch/01.png",
+  imgURL: "merch/01.png",
   price: "360",
   link: "https://teeshopper.in/products/ZILA-DARBHANGA-GOLDEN-PRINT",
-  discription: "Dbrave T-shirt with 'Zila Darbhanga' Writen on it",
+  discription: "Dbrave T-shirt with 'Zila Darbhanga' written on it",
  },
- {
+ second: {
   id: "02",
   title: "T-shirt",
-  img: "",
+  imgURL: "merch/02.png",
   price: "370",
   link: "https://teeshopper.in/products/ZILA-DARBHANGA-EXCLUSIVE-",
-  discription: "Dbrave T-shirt with 'Zila Darbhanga' Writen on it"
+  discription: "Dbrave T-shirt with 'Zila Darbhanga' written on it"
  },
- {
+ third: {
   id: "03",
   title: "T-shirt",
-  img: "",
-  price: "",
-  link: "",
-  discription: ""
- },
- {
-  id: "04",
-  title: "T-shirt",
-  img: "",
-  price: "",
-  link: "",
-  discription: ""
- },
- {
-  id: "05",
-  title: "T-shirt",
-  img: "",
-  price: "",
-  link: "",
-  discription: ""
- },
- {
-  id: "06",
-  title: "T-shirt",
-  img: "",
-  price: "",
-  link: "",
-  discription: ""
- },
- {
-  id: "07",
-  title: "T-shirt",
-  img: "",
-  price: "",
-  link: "",
-  discription: ""
- },
- {
-  id: "08",
-  title: "T-shirt",
-  img: "",
-  price: "",
-  link: "",
-  discription: ""
- },
- {
-  id: "09",
-  title: "T-shirt",
-  img: "",
-  price: "",
-  link: "",
-  discription: ""
- },
-]
+  imgURL: "merch/03.png",
+  price: "370",
+  link: "https://teeshopper.in/products/BE-THE-BRAVE-SPECIAL-MERCH",
+  discription: "Dbrave T-shirt with 'Be the Brave' written on it"
+ }
+}

@@ -5,7 +5,7 @@ import SocialButton from "./SocialButton"
 
 const SocialCard = () => {
   return (
-    <div class="max-w-sm p-8 rounded overflow-hidden m-2 lg: flex justify-around	">
+    <div className="max-w-sm p-8 rounded overflow-hidden m-2 lg: flex justify-around	">
       <SocialButton href={socialData.youtube} path="social/youtube.svg" />
       <SocialButton href={socialData.facebook} path="social/fb.svg" />
       <SocialButton href={socialData.instagram} path="social/insta.svg" />

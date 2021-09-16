@@ -4,12 +4,16 @@ import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import { collection, addDoc } from "firebase/firestore"
 
 import { storage, db } from "../src/utility/Firebase"
+import ProgressBar from "../src/components/ProgressBar"
 
 const Admin = () => {
   const [image, setImage] = useState()
   const [imgURL, setImgURL] = useState()
-
-  const uploadImg = () => {
+  const [progress, setProgress] = useState()
+  const [done, setDone] = useState(false)
+  const uploadImg = (e) => {
+    e.preventDefault()
+    console.log("inside uploadFunction")
     const metadata = {
       contentType: "image/jpeg",
     }
@@ -22,6 +26,7 @@ const Admin = () => {
       (snapshot) => {
         // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        setProgress(Math.floor(progress))
         console.log("Upload is " + progress + "% done")
 
         switch (snapshot.state) {
@@ -63,7 +68,6 @@ const Admin = () => {
     const link = e.target.elements.link?.value
     const discription = e.target.elements.discription?.value
 
-    uploadImg(image)
     //Cloud FireStore
 
     try {
@@ -76,6 +80,7 @@ const Admin = () => {
         imgURL: imgURL,
       })
       console.log("Document written with ID: ", docRef.id)
+      setDone(true)
     } catch (e) {
       console.error("Error adding document: ", e)
     }
@@ -88,6 +93,23 @@ const Admin = () => {
           Upload an Item 🛒
         </h1>
 
+        <form onSubmit={uploadImg}>
+          <label htmlFor="image">Image</label>
+          <div className="flex justify-center items-center ">
+            <input
+              type="file"
+              className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out `}
+              id="image"
+              placeholder="image"
+              required
+              onChange={(e) => setImage(e.target.files[0])}
+            />
+            <button className="bg-red-500 hover:bg-red-700 text-black font-bold my-2 mx-4 py-2 px-4 rounded">
+              📤
+            </button>
+          </div>
+        </form>
+        {progress ? <ProgressBar progress={progress} color="#ff655b" /> : null}
         <form onSubmit={handleFormSubmit}>
           <div>
             <label>Title</label>
@@ -129,17 +151,6 @@ const Admin = () => {
               required
             />
           </div>
-          <div>
-            <label htmlFor="image">Image</label>
-            <input
-              type="file"
-              className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
-              id="image"
-              placeholder="image"
-              required
-              onChange={(e) => setImage(e.target.files[0])}
-            />
-          </div>
 
           <div className="flex justify-center items-center mt-6">
             <button
@@ -149,6 +160,7 @@ const Admin = () => {
             </button>
           </div>
         </form>
+        {done ? <ProgressBar progress={100} color="#135ffb" /> : null}
       </div>
     </div>
   )

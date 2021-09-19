@@ -1,24 +1,25 @@
 import React, { useState } from "react"
-
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
+
 import { collection, addDoc } from "firebase/firestore"
+import { storage, db } from "../../src/utility/Firebase"
+import ProgressBar from "../../src/components/ProgressBar"
 
-import { storage, db } from "../src/utility/Firebase"
-import ProgressBar from "../src/components/ProgressBar"
-
-const Admin = () => {
+const AdminSongs = () => {
   const [image, setImage] = useState()
   const [imgURL, setImgURL] = useState()
   const [progress, setProgress] = useState()
   const [done, setDone] = useState(false)
+
   const uploadImg = (e) => {
     e.preventDefault()
     console.log("inside uploadFunction")
+
     const metadata = {
       contentType: "image/jpeg",
     }
     //
-    const storageRef = ref(storage, "merch/" + image.name)
+    const storageRef = ref(storage, "songs/" + image.name)
     const uploadTask = uploadBytesResumable(storageRef, image, metadata)
 
     uploadTask.on(
@@ -64,18 +65,14 @@ const Admin = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault()
     const title = e.target.elements.title?.value
-    const price = e.target.elements.price?.value
+    const artist = e.target.elements.artist?.value
     const link = e.target.elements.link?.value
-    const discription = e.target.elements.discription?.value
-
-    //Cloud FireStore
 
     try {
-      const docRef = await addDoc(collection(db, "merchData"), {
+      const docRef = await addDoc(collection(db, "songs"), {
         //
         title: title,
-        price: price,
-        discription: discription,
+        artist: artist,
         link: link,
         imgURL: imgURL,
       })
@@ -90,11 +87,11 @@ const Admin = () => {
     <div className="h-screen flex bg-gray-bg1">
       <div className="w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16">
         <h1 className="text-2xl font-medium text-primary mt-4 mb-12 text-center">
-          Upload an Item 🛒
+          Add a New Song
         </h1>
 
         <form onSubmit={uploadImg}>
-          <label htmlFor="image">Image</label>
+          <label htmlFor="image">Thumbnail</label>
           <div className="flex justify-center items-center ">
             <input
               type="file"
@@ -122,22 +119,12 @@ const Admin = () => {
             />
           </div>
           <div>
-            <label>Price</label>
-            <input
-              type="number"
-              className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
-              id="price"
-              placeholder="Price"
-              required
-            />
-          </div>
-          <div>
-            <label>Discription</label>
+            <label>Artist(s)</label>
             <input
               type="text"
               className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
-              id="discription"
-              placeholder="Discription"
+              id="artist"
+              placeholder="Artist(s)"
               required
             />
           </div>
@@ -165,5 +152,4 @@ const Admin = () => {
     </div>
   )
 }
-
-export default Admin
+export default AdminSongs

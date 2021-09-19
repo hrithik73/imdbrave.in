@@ -5,7 +5,7 @@ const MerchCard = ({ item }) => {
   return (
     <div className="m-10">
       <div className="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="w-1/3 bg-cover bg-local">
+        <div className="w-1/2 bg-cover bg-local">
           <img src={item.imgURL} />
         </div>
         <div className="w-2/3 p-4">

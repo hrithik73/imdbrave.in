@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { collection, getDocs, orderBy } from "firebase/firestore"
+import { collection, getDocs } from "firebase/firestore"
 
 import { db } from "../src/utility/Firebase"
 import Header from "../src/components/Header"
@@ -28,7 +28,7 @@ const Merch = () => {
   }
   return (
     <>
-      <Header />
+      <Header current="merch" />
       <div className="lg:flex flex-wrap justify-center align-center flex-1">
         <MerchCard item={merch.first} />
         <MerchCard item={merch.second} />

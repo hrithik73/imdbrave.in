@@ -20,3 +20,19 @@ const app = firebase.initializeApp(firebaseConfig)
 
 export const storage = getStorage(app)
 export const db = getFirestore()
+
+// export const fetchData = () => {
+//   const [data, setdata] = useState([])
+
+//   const fetchData = async () => {
+//     const querySnapshot = await getDocs(collection(db, "songs"))
+//     const merchData = []
+//     querySnapshot.forEach((doc) => {
+//       merchData.push(doc.data())
+//       // console.log(merchData)
+//     })
+//     setdata(merchData)
+//   }
+
+//   return data
+// }

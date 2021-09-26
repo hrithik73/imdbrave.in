@@ -1,3 +1,4 @@
+// Static Data for site
 export const socialData = {
  facebook: "https://facebook.com/imdbrave",
  instagram: "https://instagram.com/imdbrave",

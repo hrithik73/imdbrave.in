@@ -15,6 +15,11 @@ const admin = () => {
           Songs
         </div>
       </Link>
+      <Link href="/admin/timeline" >
+        <div className="cursor-pointer max-w-sm m-auto my-10 bg-white rounded-lg border border-primary Border shadow-default py-10 px-16">
+          Timeline
+        </div>
+      </Link>
 
     </div>
   )

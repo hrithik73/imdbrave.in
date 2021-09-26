@@ -1,6 +1,5 @@
 import React from "react"
 import { socialData } from "../data/data"
-
 import SocialButton from "./SocialButton"
 
 const SocialCard = () => {

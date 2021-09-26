@@ -12,7 +12,7 @@ const Header = ({ current }) => {
   const [navigation, setNavigation] = useState([
     { name: "Merch", href: "/merch", current: false },
     { name: "Songs", href: "/songs", current: false },
-    { name: "Projects", href: "/projects", current: false },
+    { name: "Timeline", href: "/timeline", current: false },
     { name: "Contacts", href: "/contacts", current: false },
   ])
 
@@ -26,8 +26,8 @@ const Header = ({ current }) => {
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
-          <div className="max-w-7xl mx-auto px-2 sm:px-6 md:px-6 lg:px-8 ">
-            <div className="relative flex items-center justify-between h-16">
+          <div className="max-w-7xl mx-auto px-2 sm:px-6 md:px-6 lg:px-8">
+            <div className="relative flex items-center justify-between h-20">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
@@ -42,21 +42,21 @@ const Header = ({ current }) => {
                 <div className="flex-shrink-0 flex items-center">
                   <Link href="/">
                     <img
-                      className="block lg:hidden h-12 w-auto cursor-pointer"
-                      src="logo2.png"
+                      className="block lg:hidden h-20 w-15 cursor-pointer"
+                      src="logo3.png"
                       alt="Workflow"
                     />
                   </Link>
                   <Link href="/">
                     <img
-                      className="hidden lg:block h-12 w-auto cursor-pointer"
-                      src="logo2.png"
+                      className="hidden lg:block h-20 w-20 cursor-pointer"
+                      src="logo3.png"
                       alt="Workflow"
                     />
                   </Link>
                 </div>
-                <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
+                <div className="hidden sm:block sm:ml-6 self-center ">
+                  <div className="flex space-x-4 content-center ">
                     {navigation.map((item) => (
                       <Link href={item.href} key={item.name}>
                         <a
@@ -103,5 +103,4 @@ const Header = ({ current }) => {
     </Disclosure>
   )
 }
-
 export default Header

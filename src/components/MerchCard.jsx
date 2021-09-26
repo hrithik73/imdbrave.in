@@ -1,9 +1,9 @@
 import React from "react"
 
-const MerchCard = ({ item }) => {
+const MerchCard = ({ item, onClick }) => {
   //   console.log(item)
   return (
-    <div className="m-10">
+    <div className="m-10" onClick={onClick}>
       <div className="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="w-1/2 bg-cover bg-local">
           <img src={item.imgURL} />

@@ -1,13 +1,13 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage"
 import { collection, addDoc } from "firebase/firestore"
 
 import { storage, db } from "../../src/utility/Firebase"
 import ProgressBar from "../../src/components/ProgressBar"
 
-const AdminMerch = () => {
+const timeline = () => {
   const [image, setImage] = useState()
-  const [imgURL, setImgURL] = useState()
+  const [imgURL, setImgURL] = useState(null)
   const [progress, setProgress] = useState()
   const [done, setDone] = useState(false)
 
@@ -20,7 +20,7 @@ const AdminMerch = () => {
       contentType: "image/jpeg",
     }
     //
-    const storageRef = ref(storage, "merch/" + image.name)
+    const storageRef = ref(storage, "timeline/" + image.name)
     const uploadTask = uploadBytesResumable(storageRef, image, metadata)
 
     uploadTask.on(
@@ -66,17 +66,16 @@ const AdminMerch = () => {
   const handleFormSubmit = async (e) => {
     e.preventDefault()
     const title = e.target.elements.title?.value
-    const price = e.target.elements.price?.value
-    const link = e.target.elements.link?.value
-    const discription = e.target.elements.discription?.value
+    const subtitle = e.target.elements.subtitle?.value
+    const date = e.target.elements.date?.value
+    // const discription = e.target.elements.discription?.value
 
     try {
-      const docRef = await addDoc(collection(db, "merchData"), {
+      const docRef = await addDoc(collection(db, "timeline"), {
         //
         title: title,
-        price: price,
-        discription: discription,
-        link: link,
+        subtitle: subtitle,
+        date: date,
         imgURL: imgURL,
       })
       console.log("Document written with ID: ", docRef.id)
@@ -85,12 +84,11 @@ const AdminMerch = () => {
       console.error("Error adding document: ", e)
     }
   }
-
   return (
     <div className="h-screen flex bg-gray-bg1">
       <div className="w-full max-w-md m-auto bg-white rounded-lg border border-primaryBorder shadow-default py-10 px-16">
         <h1 className="text-2xl font-medium text-primary mt-4 mb-12 text-center">
-          Upload an Item 🛒
+          Add a new Achievement 🎯
         </h1>
 
         <form onSubmit={uploadImg}>
@@ -123,36 +121,25 @@ const AdminMerch = () => {
             />
           </div>
           <div>
-            <label>Price</label>
-            <input
-              type="number"
-              className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
-              id="price"
-              placeholder="Price"
-              required
-            />
-          </div>
-          <div>
-            <label>Discription</label>
+            <label>Subtitle</label>
             <input
               type="text"
               className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
-              id="discription"
-              placeholder="Discription"
+              id="subtitle"
+              placeholder="Subtitle"
               required
             />
           </div>
           <div>
-            <label>Link</label>
+            <label>Date</label>
             <input
-              type="url"
+              type="text"
               className={`w-full p-2 text-primary border rounded-md outline-none text-sm transition duration-150 ease-in-out mb-4`}
-              id="link"
-              placeholder="Link"
+              id="date"
+              placeholder="Date"
               required
             />
           </div>
-
           <div className="flex justify-center items-center mt-6">
             <button
               className={`bg-green py-2 px-4 text-sm text-dark rounded border border-green focus:outline-none focus:border-green-dark`}
@@ -166,4 +153,4 @@ const AdminMerch = () => {
     </div>
   )
 }
-export default AdminMerch
+export default timeline

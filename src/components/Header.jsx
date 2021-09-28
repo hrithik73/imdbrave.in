@@ -13,7 +13,7 @@ const Header = ({ current }) => {
     { name: "Merch", href: "/merch", current: false },
     { name: "Songs", href: "/songs", current: false },
     { name: "Timeline", href: "/timeline", current: false },
-    { name: "Contacts", href: "/contacts", current: false },
+    { name: "Contact", href: "/contact", current: false },
   ])
 
   if (!current === undefined) {
@@ -43,14 +43,14 @@ const Header = ({ current }) => {
                   <Link href="/">
                     <img
                       className="block lg:hidden h-20 w-15 cursor-pointer"
-                      src="logo3.png"
+                      src="logo2.png"
                       alt="Workflow"
                     />
                   </Link>
                   <Link href="/">
                     <img
                       className="hidden lg:block h-20 w-20 cursor-pointer"
-                      src="logo3.png"
+                      src="logo2.png"
                       alt="Workflow"
                     />
                   </Link>

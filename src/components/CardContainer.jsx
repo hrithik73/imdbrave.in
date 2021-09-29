@@ -1,5 +1,5 @@
 import React from "react"
-import { otherLink, socialData } from "../data/data"
+import { socialData } from "../data/data"
 import Card from "../components/Card"
 
 const data = {
@@ -12,7 +12,7 @@ const data = {
     link: socialData.distrupt,
   },
   imdb: {
-    text: "Got an recogination from imdb",
+    text: "Got recogination from imdb",
     link: socialData.imdb,
   },
   stage: {
@@ -20,7 +20,7 @@ const data = {
     link: socialData.live,
   },
   songs: {
-    text: "Have many hit songs",
+    text: "has many hit songs",
     link: socialData.playlist,
   },
 }

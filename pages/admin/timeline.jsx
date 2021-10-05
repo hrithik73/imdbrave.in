@@ -77,6 +77,7 @@ const timeline = () => {
         subtitle: subtitle,
         date: date,
         imgURL: imgURL,
+        timeInterval: new Date().getTime(),
       })
       console.log("Document written with ID: ", docRef.id)
       setDone(true)

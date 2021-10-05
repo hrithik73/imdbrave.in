@@ -5,6 +5,7 @@ import { db } from "../src/utility/Firebase"
 import Header from "../src/components/Header"
 import MerchCard from "../src/components/MerchCard"
 import { merch } from "../src/data/data"
+import Footer from "../src/components/Footer"
 
 const Merch = () => {
   const [data, setdata] = useState([])
@@ -37,6 +38,7 @@ const Merch = () => {
           return <MerchCard item={item} key={item.imgURL} />
         })}
       </div>
+      <Footer />
     </>
   )
 }

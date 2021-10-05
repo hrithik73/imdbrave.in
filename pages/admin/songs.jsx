@@ -75,6 +75,7 @@ const AdminSongs = () => {
         artist: artist,
         link: link,
         imgURL: imgURL,
+        timeInterval: new Date().getTime(),
       })
       console.log("Document written with ID: ", docRef.id)
       setDone(true)

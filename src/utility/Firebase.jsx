@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import * as firebase from "firebase/app"
 import { getStorage } from "firebase/storage"
 import { getFirestore } from "firebase/firestore"

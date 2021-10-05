@@ -39,3 +39,22 @@ export const merch = {
   discription: "Dbrave T-shirt with 'Be the Brave' written on it"
  }
 }
+
+export const team = {
+ developer: {
+  name: "Hrithik Singh",
+  designation: "Developer",
+  facebook: "https://www.facebook.com/hritthik73/",
+  insta: "https://instagram.com/hrithik73_",
+  twitter: "https://twitter.com/hrithik73_",
+  img: "other/hrithik.webp"
+ },
+ management: {
+  name: "Talha Khan",
+  designation: "Management",
+  facebook: "https://www.facebook.com/profile.php?id=100010324715196",
+  insta: "https://www.instagram.com/imtalha_k/",
+  twitter: "https://twitter.com/TalhaKh58656486?s=09",
+  img: "other/talha.jpeg"
+ }
+}

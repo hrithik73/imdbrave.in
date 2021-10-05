@@ -28,7 +28,7 @@ const data = {
 const CardContainer = () => {
   return (
     <>
-      <div className="flex flex-col md:flex-row sm:flex-row items-center justify-center lg:py-12 lg:px-12 lg:my-14 lg:mx-14 ">
+      <div className="flex flex-col md:flex-row sm:flex-row  items-center justify-center">
         <Card
           text={data.yt.text}
           link={data.yt.link}

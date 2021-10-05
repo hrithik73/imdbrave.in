@@ -33,8 +33,8 @@ const Footer = () => {
           </p>
         </div>
       </div>
-      <div className="flex justify-center border-t-2	border-black-200	">
-        <a> © 2021 |Coded with ❤️ by Hrithik </a>
+      <div className="flex justify-center 	border-black-200 pb-1">
+        <a> © 2021 | Coded with ❤️ by Hrithik </a>
       </div>
     </>
   )

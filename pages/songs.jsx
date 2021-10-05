@@ -2,16 +2,20 @@ import React, { useState, useEffect } from "react"
 import Header from "../src/components/Header"
 import SongCard from "../src/components/SongCard"
 
-import { collection, getDocs } from "firebase/firestore"
+import { collection, getDocs, orderBy } from "firebase/firestore"
 
 import { db } from "../src/utility/Firebase"
+import Footer from "../src/components/Footer"
 
 const recents = () => {
   const [data, setdata] = useState([])
   console.log(data)
 
   const fetchData = async () => {
-    const querySnapshot = await getDocs(collection(db, "songs"))
+    const querySnapshot = await getDocs(
+      collection(db, "songs"),
+      orderBy("timeInterval", "asc")
+    )
     const songData = []
     querySnapshot.forEach((doc) => {
       songData.push(doc.data())
@@ -35,6 +39,7 @@ const recents = () => {
           return <SongCard item={item} key={item.imgURL} />
         })}
       </div>
+      <Footer />
     </div>
   )
 }

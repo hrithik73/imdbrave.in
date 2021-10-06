@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import Header from "../src/components/Header"
 import SongCard from "../src/components/SongCard"
 
-import { collection, getDocs, orderBy } from "firebase/firestore"
+import { collection, getDocs, query, orderBy } from "firebase/firestore"
 
 import { db } from "../src/utility/Firebase"
 import Footer from "../src/components/Footer"
@@ -12,10 +12,11 @@ const recents = () => {
   console.log(data)
 
   const fetchData = async () => {
-    const querySnapshot = await getDocs(
-      collection(db, "songs"),
-      orderBy("timeInterval", "asc")
-    )
+    const q = query(collection(db, "songs"), orderBy("timeInterval", "desc"))
+
+    const querySnapshot = await getDocs(q)
+    // orderBy("timeInterval", "desc")
+
     const songData = []
     querySnapshot.forEach((doc) => {
       songData.push(doc.data())

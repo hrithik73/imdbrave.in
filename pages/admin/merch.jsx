@@ -78,6 +78,7 @@ const AdminMerch = () => {
         discription: discription,
         link: link,
         imgURL: imgURL,
+        timeInterval: new Date().getTime(),
       })
       console.log("Document written with ID: ", docRef.id)
       setDone(true)

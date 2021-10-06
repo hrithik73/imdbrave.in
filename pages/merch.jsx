@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { collection, getDocs } from "firebase/firestore"
+import { collection, getDocs, query, orderBy } from "firebase/firestore"
 
 import { db } from "../src/utility/Firebase"
 import Header from "../src/components/Header"
@@ -11,7 +11,12 @@ const Merch = () => {
   const [data, setdata] = useState([])
 
   const fetchData = async () => {
-    const querySnapshot = await getDocs(collection(db, "merchData"))
+    const q = query(
+      collection(db, "merchData"),
+      orderBy("timeInterval", "desc")
+    )
+
+    const querySnapshot = await getDocs(q)
     const merchData = []
     querySnapshot.forEach((doc) => {
       merchData.push(doc.data())

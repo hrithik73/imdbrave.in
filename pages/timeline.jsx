@@ -10,10 +10,9 @@ const Timeline = () => {
   const [data, setdata] = useState([])
 
   const fetchData = async () => {
-    const querySnapshot = await getDocs(
-      collection(db, "timeline"),
-      orderBy("timeInterval", "asc")
-    )
+    const q = query(collection(db, "timeline"), orderBy("timeInterval", "desc"))
+
+    const querySnapshot = await getDocs(q)
     const timelineData = []
     querySnapshot.forEach((doc) => {
       timelineData.push(doc.data())

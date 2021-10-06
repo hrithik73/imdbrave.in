@@ -24,24 +24,29 @@ const Footer = () => {
       <div className="flex justify-center pb-10 py-3 my-5">
         <div className="flex-row border-2 border-red-200 max-w-md bg-white py-2 px-6 sm:py-4 sm:px-10 shadow-lg rounded-lg">
           <p>Contact Management</p>
-          <a className=" flex gap-x-2 text-blue-700">
+          <a
+            className="flex gap-x-2 text-blue-700"
+            href="mailto:talha7883@gmail.com"
+          >
             {" "}
-            <MdEmail color="black" className="self-center" />{" "}
+            <MdEmail color="black" className="self-center" />
             talha7883@gmail.com
           </a>
           <p className="flex gap-x-2 ">
-            {" "}
             <FaPhoneAlt className="self-center" /> +91 9097060863
           </p>
         </div>
       </div>
-      <div
-        className="flex justify-center border-black-200 pb-1 cursor-pointer"
-        onClick={() => {
-          window.open(team.developer.insta)
-        }}
-      >
-        <a className="text-sm"> © 2021 | Coded with ❤️ by Hrithik </a>
+      <div className="flex justify-center border-black-200 pb-1 cursor-pointer">
+        <a
+          onClick={() => {
+            window.open(team.developer.insta)
+          }}
+          className="text-sm"
+        >
+          {" "}
+          © 2021 | Coded with ❤️ by Hrithik{" "}
+        </a>
       </div>
     </>
   )

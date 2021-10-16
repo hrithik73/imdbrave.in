@@ -5,7 +5,10 @@ import 'tailwindcss/tailwind.css';
 const App = () => {
 
   return (
-    <HomePage />
+    <>
+
+      <HomePage />
+    </>
   )
 }
 export default App

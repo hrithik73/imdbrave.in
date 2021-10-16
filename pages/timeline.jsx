@@ -30,7 +30,9 @@ const Timeline = () => {
       <Header />
       {data.map((item, seq) => {
         //! Progress in Timeline
-        return <ProgressCard item={item} key={item.id} seq={seq + 1} />
+        return (
+          <ProgressCard item={item} key={item.timeInterval} seq={seq + 1} />
+        )
       })}
       <Footer />
     </>

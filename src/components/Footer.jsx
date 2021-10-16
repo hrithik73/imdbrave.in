@@ -40,11 +40,12 @@ const Footer = () => {
         <a
           onClick={() => {
             window.open(team.developer.insta)
+            console.log(team.developer.insta)
           }}
           className="text-sm"
         >
           {" "}
-          © 2021 | Coded with ❤️ by Hrithik{" "}
+          © 2021 | Coded by Hrithik
         </a>
       </div>
     </>

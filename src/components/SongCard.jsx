@@ -13,7 +13,7 @@ const SongCard = ({ item }) => {
           <h1 className="text-gray-900 font-bold text-xl mr-2 pr-4 flex sm:mr-3">
             {item.title}
           </h1>
-          <p className="text-gray-400 font-semibold	text-sm truncate">
+          <p className="text-gray-400 font-semibold	text-sm">
             Artist(s):{item.artist}
           </p>
           <div className="flex item-center justify-between mt-3">

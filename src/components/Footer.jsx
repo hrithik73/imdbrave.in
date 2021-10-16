@@ -1,9 +1,8 @@
 import React from "react"
+import { FaPhoneAlt } from "react-icons/fa"
+import { MdEmail } from "react-icons/md"
 
 import { team } from "../data/data"
-
-import { MdEmail } from "react-icons/md"
-import { FaPhoneAlt } from "react-icons/fa"
 
 const Footer = () => {
   return (

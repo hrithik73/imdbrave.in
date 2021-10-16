@@ -4,26 +4,26 @@ import { team } from "../data/data"
 
 const Team = () => {
   return (
-    <section class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
-      <div class="text-center pb-12">
-        <h1 class="font-bold text-xl md:text-2xl lg:text-3xl font-heading text-gray-900">
+    <section className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-4 py-12">
+      <div className="text-center pb-12">
+        <h1 className="font-bold text-xl md:text-2xl lg:text-3xl font-heading text-gray-900">
           Special Mention
         </h1>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 self-center ">
-        <div class="w-full bg-white rounded-lg p-5 flex flex-col justify-center items-center">
-          <div class="mb-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-2 self-center ">
+        <div className="w-full bg-white rounded-lg p-5 flex flex-col justify-center items-center">
+          <div className="mb-4">
             <img
-              class="object-center object-cover rounded-full h-28 w-28"
+              className="object-center object-cover rounded-full h-28 w-28"
               src="other/hrithik.webp"
               alt="photo of development team lead"
             />
           </div>
-          <div class="text-center">
-            <p class="text-xl text-gray-700 font-bold mb-2">
+          <div className="text-center">
+            <p className="text-xl text-gray-700 font-bold mb-2">
               {team.developer.name}
             </p>
-            <p class="text-base text-gray-400 font-normal">
+            <p className="text-base text-gray-400 font-normal">
               {team.developer.designation}
             </p>
           </div>
@@ -45,19 +45,19 @@ const Team = () => {
             />
           </div>
         </div>
-        <div class="w-full bg-white rounded-lg p-5 flex flex-col justify-center items-center">
-          <div class="">
+        <div className="w-full bg-white rounded-lg p-5 flex flex-col justify-center items-center">
+          <div className="">
             <img
-              class="object-center object-cover rounded-full h-28 w-28"
+              className="object-center object-cover rounded-full h-28 w-28"
               src={team.management.img}
               alt="photo of management team lead"
             />
           </div>
-          <div class="text-center">
-            <p class="text-xl text-gray-700 font-bold mb-2">
+          <div className="text-center">
+            <p className="text-xl text-gray-700 font-bold mb-2">
               {team.management.name}
             </p>
-            <p class="text-base text-gray-400 font-normal">
+            <p className="text-base text-gray-400 font-normal">
               {team.management.designation}
             </p>
           </div>

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { collection, getDocs, orderBy } from "firebase/firestore"
+import { collection, getDocs, orderBy, query } from "firebase/firestore"
 
 import { db } from "../src/utility/Firebase"
 import Header from "../src/components/Header"

@@ -9,7 +9,7 @@ import Footer from "../src/components/Footer"
 
 const recents = () => {
   const [data, setdata] = useState([])
-  console.log(data)
+  // console.log(data)
 
   const fetchData = async () => {
     const q = query(collection(db, "songs"), orderBy("timeInterval", "desc"))
@@ -20,7 +20,6 @@ const recents = () => {
     const songData = []
     querySnapshot.forEach((doc) => {
       songData.push(doc.data())
-      // console.log(merchData)
     })
     setdata(songData)
   }

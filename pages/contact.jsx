@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useState, useRef } from "react"
 import Header from "../src/components/Header"
 
 import emailjs from "emailjs-com"
@@ -8,10 +8,6 @@ import Footer from "../src/components/Footer"
 const contact = () => {
   const form = useRef()
 
-  // useEffect(() => {
-  //   init("user_uNG2qq06QnbAJmLVx6MmR")
-  // }, [])
-
   const emailJs = {
     serviceID: "service_dheyyi2",
     templateID: "template_ggeqqbu",
@@ -19,15 +15,10 @@ const contact = () => {
     userID: "user_uNG2qq06QnbAJmLVx6MmR",
   }
 
-  //! emailjs.send(serviceID, templateID, templateParams, userID);
-
-  //
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(form.current)
 
-    // console.log(e.target.elements.email?.value)
-    // console.log(e.target.elements.message?.value)
     const templateParams = {
       from_name:
         e.target.elements.first_name?.value +
@@ -46,6 +37,8 @@ const contact = () => {
       .then(
         (result) => {
           console.log(result.text)
+          e.target.elements.first_name?.value
+          // setData({})
         },
         (error) => {
           console.log(error.text)
@@ -70,7 +63,6 @@ const contact = () => {
                 className="appearance-none block w-full bg-gray-200 text-gray-700 border border-grey-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                 id="first_name"
                 type="text"
-                // placeholder=""
                 required
               />
             </div>

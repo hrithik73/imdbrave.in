@@ -2,34 +2,21 @@ import React, { useState, useEffect } from "react"
 import Header from "../src/components/Header"
 import SongCard from "../src/components/SongCard"
 
-import { collection, getDocs, query, orderBy } from "firebase/firestore"
-
-import { db } from "../src/utility/Firebase"
+import { ReadDB } from "../src/utility/Firebase"
 import Footer from "../src/components/Footer"
+import LoadingScreen from "../src/components/LoadingScreen"
 
 const recents = () => {
-  const [data, setdata] = useState([])
-  // console.log(data)
+  const [data, setData] = useState([])
 
-  const fetchData = async () => {
-    const q = query(collection(db, "songs"), orderBy("timeInterval", "desc"))
-
-    const querySnapshot = await getDocs(q)
-    // orderBy("timeInterval", "desc")
-
-    const songData = []
-    querySnapshot.forEach((doc) => {
-      songData.push(doc.data())
-    })
-    setdata(songData)
-  }
-
-  useEffect(() => {
-    fetchData()
+  useEffect(async () => {
+    const data = await ReadDB(null, "songs")
+    // console.log(data)
+    setData(data)
   }, [])
 
   if (!data) {
-    return null
+    return <LoadingScreen />
   }
   return (
     <div>

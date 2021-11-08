@@ -1,36 +1,23 @@
 import React, { useEffect, useState } from "react"
-import { collection, getDocs, query, orderBy } from "firebase/firestore"
 
-import { db } from "../src/utility/Firebase"
+import { ReadDB } from "../src/utility/Firebase"
 import Header from "../src/components/Header"
 import MerchCard from "../src/components/MerchCard"
 import { merch } from "../src/data/data"
 import Footer from "../src/components/Footer"
+import LoadingScreen from "../src/components/LoadingScreen"
 
 const Merch = () => {
-  const [data, setdata] = useState([])
+  const [data, setData] = useState([])
 
-  const fetchData = async () => {
-    const q = query(
-      collection(db, "merchData"),
-      orderBy("timeInterval", "desc")
-    )
-
-    const querySnapshot = await getDocs(q)
-    const merchData = []
-    querySnapshot.forEach((doc) => {
-      merchData.push(doc.data())
-      // console.log(merchData)
-    })
-    setdata(merchData)
-  }
-
-  useEffect(() => {
-    fetchData()
+  useEffect(async () => {
+    const data = await ReadDB(null, "merchData")
+    // console.log(data)
+    setData(data)
   }, [])
 
   if (!data) {
-    return null
+    return <LoadingScreen />
   }
   return (
     <>

@@ -3,14 +3,16 @@ import React from "react"
 const MerchCard = ({ item, onClick }) => {
   //   console.log(item)
   return (
-    <div className="m-10" onClick={onClick}>
-      <div className="flex max-w-md bg-white shadow-lg rounded-lg overflow-hidden">
-        <div className="w-1/2 bg-cover bg-local">
+    <div className="m-8 lg:m-2 " onClick={onClick}>
+      <div className="flex max-w-xs bg-white shadow-lg rounded-lg ">
+        <div className="w-full bg-cover bg-local">
           <img src={item.imgURL} />
         </div>
-        <div className="w-2/3 p-4">
+        <div className="w-2/3 p-4 ">
           <h1 className="text-gray-900 font-bold text-2xl">{item.title}</h1>
-          <p className="mt-2 text-gray-600 text-sm">{item.discription}</p>
+          <p className="mt-2 text-gray-600 text-sm truncate">
+            {item.discription}
+          </p>
           <div className="flex item-center mt-2">
             <svg
               className="w-5 h-5 fill-current text-gray-700"

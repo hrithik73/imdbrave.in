@@ -1,7 +1,9 @@
-import React from "react"
+import React, { useRef } from "react"
+
 import { socialData } from "../data/data"
 import Card from "../components/Card"
 
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi"
 const data = {
   yt: {
     text: "Youtube official chanel with 500k Views",
@@ -26,9 +28,26 @@ const data = {
 }
 
 const CardContainer = () => {
+  const ref = useRef(null)
+
+  const scroll = (scrollOffset) => {
+    ref.current.scrollLeft += scrollOffset
+  }
+
   return (
     <>
-      <div className="flex flex-col md:flex-row sm:flex-row  items-center justify-center">
+      <div className="flex justify-between">
+        <button onClick={() => scroll(-400)}>
+          <BiLeftArrow size={20} />
+        </button>
+        <button onClick={() => scroll(400)}>
+          <BiRightArrow size={20} />
+        </button>
+      </div>
+      <div
+        className="flex overflow-x-scroll md:flex-row sm:flex-row "
+        ref={ref}
+      >
         <Card
           text={data.yt.text}
           link={data.yt.link}

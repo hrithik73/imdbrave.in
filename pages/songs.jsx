@@ -20,7 +20,7 @@ const recents = () => {
   }
   return (
     <div>
-      <Header current="recents" />
+      <Header current="Songs" />
       <div className="lg:flex flex-wrap justify-center align-center flex-1">
         {data.map((item) => {
           return <SongCard item={item} key={item.imgURL} />

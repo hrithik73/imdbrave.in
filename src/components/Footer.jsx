@@ -9,7 +9,7 @@ import SocialButton from "./SocialButton"
 const Footer = () => {
   return (
     <>
-      <div className="flex sm:flex-row flex-wrap rounded h-150 justify-around bg-gradient-to-tr from-gray-700 via-gray-900 to-black mx-4 px-3 py-5 my-5">
+      <div className="flex sm:flex-row flex-wrap rounded h-150 justify-around bg-gradient-to-tr from-gray-700 via-gray-900 to-black mx-2 px-3 py-5 my-5">
         <div className="flex w-full justify-around flex-wrap-reverse h-full">
           <div className="flex-row justify-center h-1/3 my-auto border-2 border-red-200 max-w-sm bg-white py-2 px-6 sm:py-4 shadow-lg rounded-lg">
             <p className="font-bold  text-lg">Contact Management</p>
@@ -29,23 +29,23 @@ const Footer = () => {
           <div className="self-center">
             <h2 className="text-center text-white font-bold">CONNECT ME AT</h2>
             <div className="flex items-center">
-              <SocialButton href={socialData.facebook} path="social/fb.svg" />
+              <SocialButton href={socialData.facebook} path="/social/fb.svg" />
               <SocialButton
                 href={socialData.instagram}
-                path="social/insta.svg"
+                path="/social/insta.svg"
               />
               <SocialButton
                 href={socialData}
-                path="social/mail.svg"
-                size={25}
+                path="/social/mail.svg"
+                height={30}
               />
               <SocialButton
                 href={socialData.youtube}
-                path="social/youtube.svg"
+                path="/social/youtube.svg"
               />
             </div>
           </div>
-          <Image width="400" height="400" src="/gallery/contact.png" />
+          <Image width="400" height="400" src="/gallery/contact-white.png" />
         </div>
       </div>
       <div className="flex justify-center border-black-200 pb-1 cursor-pointer">

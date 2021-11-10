@@ -21,7 +21,7 @@ const Merch = () => {
   }
   return (
     <>
-      <Header current="merch" />
+      <Header current="Merch" />
       <div className="lg:flex flex-wrap justify-center align-center flex-1">
         <MerchCard item={merch.first} />
         <MerchCard item={merch.second} />

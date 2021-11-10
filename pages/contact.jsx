@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react"
 import Header from "../src/components/Header"
 
 import emailjs from "emailjs-com"
-import { MdEmail } from "react-icons/md"
 import Team from "../src/components/Team"
 import Footer from "../src/components/Footer"
 const contact = () => {
@@ -48,7 +47,7 @@ const contact = () => {
 
   return (
     <>
-      <Header />
+      <Header current="Contact" />
       <div className="flex justify-center py-10 px-5" onSubmit={handleSubmit}>
         <form ref={form} className="w-full max-w-lg">
           <div className="flex flex-wrap -mx-3 mb-6">

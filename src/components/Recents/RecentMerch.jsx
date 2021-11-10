@@ -33,7 +33,7 @@ const RecentMerch = () => {
         <MerchCard item={merch.second} />
         <MerchCard item={merch.third} />
         {data.map((item) => {
-          return <MerchCard item={item} />
+          return <MerchCard item={item} key={item.imgURL} />
         })}
       </div>
     </>

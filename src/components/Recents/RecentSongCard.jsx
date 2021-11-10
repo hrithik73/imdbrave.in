@@ -1,4 +1,5 @@
 import React from "react"
+import Image from "next/image"
 import { FaPlay } from "react-icons/fa"
 
 const RecentSongCard = ({ item }) => {
@@ -10,7 +11,9 @@ const RecentSongCard = ({ item }) => {
           style={{
             backgroundImage: `url(${item.imgURL})`,
           }}
-        ></div>
+        >
+          {/* <Image src={item.imgURL} alt="song-bg" height="50%" width="100%" /> */}
+        </div>
         <div className="p-4 flex-1 flex flex-col">
           <h3 className="mb-4 text-2xl">{item.title}</h3>
           <div className="mb-4 text-grey-darker text-sm flex-1">

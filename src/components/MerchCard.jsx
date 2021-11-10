@@ -1,12 +1,17 @@
 import React from "react"
+import Image from "next/image"
 
 const MerchCard = ({ item, onClick }) => {
-  //   console.log(item)
   return (
     <div className="m-8 lg:m-2 " onClick={onClick}>
       <div className="flex max-w-xs bg-white shadow-lg rounded-lg ">
         <div className="w-full bg-cover bg-local">
-          <img src={item.imgURL} />
+          <Image
+            src={item.imgURL}
+            layout="responsive"
+            height="250"
+            width="250"
+          />
         </div>
         <div className="w-2/3 p-4 ">
           <h1 className="text-gray-900 font-bold text-2xl">{item.title}</h1>

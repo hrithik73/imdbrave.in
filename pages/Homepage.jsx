@@ -1,11 +1,11 @@
+import ImageGallery from "react-image-gallery"
+
 import CardContainer from "../src/components/CardContainer"
 import Footer from "../src/components/Footer"
 import Header from "../src/components/Header"
-import StreamCard from "../src/components/StreamCard"
-
-import ImageGallery from "react-image-gallery"
-import RecentCard from "../src/components/Recents/RecentCard"
+import RecentSongs from "../src/components/Recents/RecentSongs"
 import RecentMerch from "../src/components/Recents/RecentMerch"
+import StreamCard from "../src/components/StreamCard"
 
 const images = [
   {
@@ -73,7 +73,7 @@ const HomePage = () => {
         </div>
         <div className="h-full mt-32 lg:px-20 ">
           <h2 className="text-center font-bold">RECENT RELEASE</h2>
-          <RecentCard />
+          <RecentSongs />
         </div>
         <div className="h-full mt-32 lg:px-20 ">
           <h2 className="text-center font-bold">LETEST MERCH</h2>

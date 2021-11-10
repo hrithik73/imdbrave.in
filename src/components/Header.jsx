@@ -1,4 +1,5 @@
-import React, { useState } from "react"
+import React from "react"
+import Image from "next/image"
 
 import Link from "next/link"
 import { Disclosure } from "@headlessui/react"
@@ -8,20 +9,14 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ")
 }
 
+const navigation = [
+  { name: "Merch", href: "/merch" },
+  { name: "Songs", href: "/songs" },
+  { name: "Timeline", href: "/timeline" },
+  { name: "Contact", href: "/contact" },
+]
+
 const Header = ({ current }) => {
-  const [navigation, setNavigation] = useState([
-    { name: "Merch", href: "/merch", current: false },
-    { name: "Songs", href: "/songs", current: false },
-    { name: "Timeline", href: "/timeline", current: false },
-    { name: "Contact", href: "/contact", current: false },
-  ])
-
-  if (!current === undefined) {
-    setNavigation([
-      (navigation.find((item) => item.name === current).current = true),
-    ])
-  }
-
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -41,18 +36,24 @@ const Header = ({ current }) => {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                   <Link href="/">
-                    <img
-                      className="block lg:hidden h-20 w-15 cursor-pointer"
-                      src="logo2.png"
-                      alt="Workflow"
-                    />
+                    <div className="block lg:hidden h-20 w-15 cursor-pointer">
+                      <Image
+                        src="/logo2.png"
+                        alt="Workflow"
+                        height="80"
+                        width="80"
+                      />
+                    </div>
                   </Link>
                   <Link href="/">
-                    <img
-                      className="hidden lg:block h-20 w-20 cursor-pointer"
-                      src="logo2.png"
-                      alt="Workflow"
-                    />
+                    <div className="hidden lg:block h-20 w-20 cursor-pointer">
+                      <Image
+                        src="/logo2.png"
+                        alt="Workflow"
+                        height="100"
+                        width="100"
+                      />
+                    </div>
                   </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6 self-center ">
@@ -62,12 +63,11 @@ const Header = ({ current }) => {
                         <a
                           href={item.href}
                           className={classNames(
-                            item.current
+                            item.name === current
                               ? "bg-gray-900 text-white"
                               : "text-gray-300 hover:bg-gray-700 hover:text-white",
                             "px-3 py-2 rounded-md text-sm font-medium"
                           )}
-                          aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
                         </a>
@@ -86,12 +86,11 @@ const Header = ({ current }) => {
                   key={item.name}
                   href={item.href}
                   className={classNames(
-                    item.current
+                    item.name === current
                       ? "bg-gray-900 text-white"
                       : "text-gray-300 hover:bg-gray-700 hover:text-white",
                     "block px-3 py-2 rounded-md text-base font-medium"
                   )}
-                  aria-current={item.current ? "page" : undefined}
                 >
                   {item.name}
                 </a>

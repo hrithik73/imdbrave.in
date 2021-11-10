@@ -13,6 +13,7 @@ const Card = ({ text, link, imgPath }) => {
           width={400}
           height={400}
           className="w-full h-21 rounded-lg sm:p-2"
+          // layout="fill"
           src={imgPath}
         />
       </div>

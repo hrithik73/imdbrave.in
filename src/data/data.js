@@ -1,4 +1,7 @@
 // Static Data for site
+
+import first from "../../public/merch/01.png"
+
 export const socialData = {
  facebook: "https://facebook.com/imdbrave",
  instagram: "https://instagram.com/imdbrave",
@@ -17,7 +20,7 @@ export const socialData = {
 export const merch = {
  first: {
   title: "T-Shirt",
-  imgURL: "merch/01.png",
+  imgURL: first,
   price: "360",
   link: "https://teeshopper.in/products/ZILA-DARBHANGA-GOLDEN-PRINT",
   discription: "Dbrave T-shirt with 'Zila Darbhanga' written on it",
@@ -25,7 +28,7 @@ export const merch = {
  second: {
   id: "02",
   title: "T-shirt",
-  imgURL: "merch/02.png",
+  imgURL: "/merch/02.png",
   price: "370",
   link: "https://teeshopper.in/products/ZILA-DARBHANGA-EXCLUSIVE-",
   discription: "Dbrave T-shirt with 'Zila Darbhanga' written on it"
@@ -33,7 +36,7 @@ export const merch = {
  third: {
   id: "03",
   title: "T-shirt",
-  imgURL: "merch/03.png",
+  imgURL: "/merch/03.png",
   price: "370",
   link: "https://teeshopper.in/products/BE-THE-BRAVE-SPECIAL-MERCH",
   discription: "Dbrave T-shirt with 'Be the Brave' written on it"

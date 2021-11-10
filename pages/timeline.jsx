@@ -16,7 +16,7 @@ const Timeline = () => {
 
   return (
     <>
-      <Header />
+      <Header current="Timeline" />
       {data.map((item, seq) => {
         //! Progress in Timeline
         return (

@@ -1,3 +1,4 @@
+import Head from "next/head"
 import ImageGallery from "react-image-gallery"
 
 import CardContainer from "../src/components/CardContainer"
@@ -9,30 +10,34 @@ import StreamCard from "../src/components/StreamCard"
 
 const images = [
   {
-    original: "dbrave.png",
-    thumbnail: "dbrave.png",
+    original: "gallery/00.webp",
+    thumbnail: "gallery/00.webp",
   },
   {
-    original: "gallery/01.png",
-    thumbnail: "gallery/01.png",
+    original: "gallery/01.webp",
+    thumbnail: "gallery/01.webp",
   },
   {
-    original: "gallery/02.png",
-    thumbnail: "gallery/02.png",
+    original: "gallery/02.webp",
+    thumbnail: "gallery/02.webp",
   },
   {
-    original: "gallery/03.png",
-    thumbnail: "gallery/03.png",
+    original: "gallery/03.webp",
+    thumbnail: "gallery/03.webp",
   },
   {
-    original: "gallery/04.png",
-    thumbnail: "gallery/04.png",
+    original: "gallery/04.webp",
+    thumbnail: "gallery/04.webp",
   },
 ]
 
 const HomePage = () => {
   return (
     <>
+      <Head>
+        <title>Dbrave</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <Header />
       <div className="max-w-full mx-auto relative bg-white overflow-hidden p-0 m-0">
         <div className="relative z-10 pb-8 bg-white sm:pb-16 md:pb-28 lg:max-w-2xl lg:w-full lg:pb-28  xl:pb-32">
@@ -52,7 +57,7 @@ const HomePage = () => {
             </div>
           </main>
         </div>
-        <div className="lg:absolute lg:h-1/2 lg:inset-y-0 lg:right-0 lg:w-1/2 lg:top-0">
+        <div className="lg:absolute lg:h-1/3 lg:inset-y-0 lg:right-0  lg:w-1/2 lg:top-0">
           <ImageGallery
             items={images}
             autoPlay={true}
@@ -63,11 +68,11 @@ const HomePage = () => {
             showBullets
           />
         </div>
-        <div className="lg:ml-12 lg:pl-12 mt-0 md:ml-24 md:pl-24 lg:w-5/6 pt-10 ">
+        <div className="lg:ml-12 lg:pl-12 mt-0 md:ml-24 md:pl-24 lg:w-5/6 pt-10  ">
           <h4 className="text-center max-w-sm  font-bold">STREAM AT</h4>
           <StreamCard />
         </div>
-        <div className="h-full lg:pt-30 lg:mt-96 mt-10 lg:px-20">
+        <div className="h-full lg:pt-30 lg:mt-96 mt-10 lg:px-20  ">
           <h2 className="text-center font-bold">SOME HIGHLIGHTS</h2>
           <CardContainer />
         </div>

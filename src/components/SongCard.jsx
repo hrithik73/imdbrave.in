@@ -10,6 +10,8 @@ const SongCard = ({ item }) => {
           height={200}
           width={200}
           src={item.imgURL}
+          // layout="responsive"
+          objectFit="cover"
           // loader={ <h2>Loading</h2>}
           // className="w-1/3 h-1/3 flex bg-contain bg-center rounded-lg bg-local px-1 py-4 "
         />
@@ -17,9 +19,7 @@ const SongCard = ({ item }) => {
           <h1 className="text-gray-900 font-bold overflow-hidden truncate text-xl flex sm:mr-3">
             {item.title}
           </h1>
-          {/* <p className="text-gray-400 font-semibold truncate text-sm">
-            Artist(s):{item.artist}
-          </p> */}
+
           <p className="mt-2 text-gray-600 text-sm truncate">
             Artist(s):{item.artist}
           </p>

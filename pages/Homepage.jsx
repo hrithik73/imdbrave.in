@@ -83,7 +83,7 @@ const HomePage = () => {
             <StreamCard />
           </div>
         </div>
-        <div className="h-full lg:pt-30 lg:mt-96 mt-10 lg:px-20  ">
+        <div className="h-full lg:pt-30 lg:mt-80 mt-10 lg:px-20  ">
           <h2 className="text-center font-bold">SOME HIGHLIGHTS</h2>
           <CardContainer />
         </div>

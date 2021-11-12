@@ -20,7 +20,7 @@ const RecentSongs = () => {
   }
 
   return (
-    <>
+    <div className="flex-col">
       <div className="flex justify-between">
         <button onClick={() => scroll(-100)}>
           <BiLeftArrow size={20} />
@@ -29,19 +29,21 @@ const RecentSongs = () => {
           <BiRightArrow size={20} />
         </button>
       </div>
-      <div className="flex overflow-x-scroll" ref={ref}>
+      <div className="flex w-full overflow-x-scroll" ref={ref}>
         {data.map((item) => {
           return <RecentSongCard item={item} key={item.imgURL} />
         })}
-        <div className="w-full sm:w-1/2 md:w-1/3 flex flex-col p-3">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden flex-1 flex flex-wrap justify-center items-center">
-            <Link href="/songs" className="text-xl font-bold">
-              More at SONG Section...
+        <div className="flex flex-col p-3">
+          <div className="bg-white rounded-lg bg-cover h-48 w-48 shadow-lg overflow-hidden flex-1 flex flex-wrap justify-center items-center">
+            <Link href="/songs">
+              <a className="text-blue-400 text-xl self-center font-bold">
+                More ...
+              </a>
             </Link>
           </div>
         </div>
       </div>
-    </>
+    </div>
   )
 }
 

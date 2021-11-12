@@ -7,6 +7,7 @@ import Header from "../src/components/Header"
 import RecentSongs from "../src/components/Recents/RecentSongs"
 import RecentMerch from "../src/components/Recents/RecentMerch"
 import StreamCard from "../src/components/StreamCard"
+import { useEffect, useState } from "react"
 
 const images = [
   {
@@ -32,6 +33,14 @@ const images = [
 ]
 
 const HomePage = () => {
+  const [today, setToday] = useState(
+    new Date().toJSON().slice(0, 10).replace(/-/g, "/")
+  )
+
+  useEffect(() => {
+    localStorage.setItem("today", today)
+  }, [])
+
   return (
     <>
       <Head>
@@ -68,9 +77,11 @@ const HomePage = () => {
             showBullets
           />
         </div>
-        <div className="lg:ml-12 lg:pl-12 mt-0 md:ml-24 md:pl-24 lg:w-5/6 pt-10  ">
-          <h4 className="text-center max-w-sm  font-bold">STREAM AT</h4>
-          <StreamCard />
+        <div className="items-center flex justify-center lg:justify-between lg:pl-20 pt-20 ">
+          <div className="bg-white flex-col w-4/5 lg:w-1/4">
+            <h4 className="text-center max-w-sm font-bold">STREAM AT</h4>
+            <StreamCard />
+          </div>
         </div>
         <div className="h-full lg:pt-30 lg:mt-96 mt-10 lg:px-20  ">
           <h2 className="text-center font-bold">SOME HIGHLIGHTS</h2>

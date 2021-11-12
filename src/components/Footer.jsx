@@ -8,40 +8,45 @@ import { MdEmail } from "react-icons/md"
 import { socialData, team } from "../data/data"
 import SocialButton from "./SocialButton"
 
-const requestOptions = {
-  method: "GET",
-  redirect: "follow",
-}
-
 const Footer = () => {
   const [ytData, setTtData] = useState({ title: "", thumbnail: "", link: "" })
-  console.log(ytData)
 
-  const getLatestData = () => {
-    fetch(
-      "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCSCEDbpHxxn1urTJtILWqdw&maxResults=10&order=date&type=video&key=AIzaSyDV8Wo80C8S6_Udb_vUKfLRmcwMqIvUFu4",
-      requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) =>
-        setTtData({
-          title: result.items[0].snippet.title,
-          link: result.items[0].id.videoId,
-          thumbnail: result.items[0].snippet.thumbnails.high.url,
-        })
-      )
-      .catch((error) => console.log("error", error))
-  }
+  // const requestOptions = {
+  //   method: "GET",
+  //   redirect: "follow",
+  // }
 
-  useEffect(() => {
-    getLatestData()
-  }, [])
+  // const getLatestData = () => {
+  //   console.log("Called")
+  //   fetch(
+  //     "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCSCEDbpHxxn1urTJtILWqdw&maxResults=10&order=date&type=video&key=AIzaSyDV8Wo80C8S6_Udb_vUKfLRmcwMqIvUFu4",
+  //     requestOptions
+  //   )
+  //     .then((response) => response.json())
+  //     .then((result) =>
+  //       setTtData({
+  //         title: result.items[0].snippet.title,
+  //         link: result.items[0].id.videoId,
+  //         thumbnail: result.items[0].snippet.thumbnails.high.url,
+  //       })
+  //     )
+  //     .catch((error) => console.log("error", error))
+  // }
+
+  // useEffect(() => {
+  //   // console.log("UseEffect")
+  //   const today = new Date().toJSON().slice(0, 10).replace(/-/g, "/")
+  //   const isDiff = localStorage.getItem("today") != today
+  //   // localStorage.setItem("today", today)
+  //   isDiff && getLatestData()
+  //   console.log(isDiff)
+  // }, [])
 
   return (
     <>
       <div className="flex sm:flex-row flex-wrap-reverse rounded  justify-around bg-gradient-to-tr from-gray-700 via-gray-900 to-black mx-2 px-3 py-5 my-5">
         <div className="flex row gap-3 w-full justify-around flex-wrap-reverse h-full">
-          <div className="flex-row sm:w-1/2 justify-center h-1/3 my-auto border-2 border-red-200 max-w-sm bg-white py-2 px-6 sm:py-4 shadow-lg rounded-lg">
+          <div className="flex-row sm:w-1/4 justify-center h-1/3 my-auto border-2 border-red-200 max-w-sm bg-white py-2 px-6 sm:py-4 shadow-lg rounded-lg">
             <p className="font-bold  text-lg">Contact Management</p>
             <a
               className="flex gap-x-2 text-blue-700"
@@ -63,11 +68,12 @@ const Footer = () => {
               <SocialButton
                 href={socialData.instagram}
                 path="/social/insta.svg"
+                height={35}
               />
               <SocialButton
                 href={socialData}
                 path="/social/mail.svg"
-                height={30}
+                height={25}
               />
               <SocialButton
                 href={socialData.youtube}
@@ -75,7 +81,7 @@ const Footer = () => {
               />
             </div>
           </div>
-          {ytData.title && (
+          {/* {ytData.title && (
             <div className="flex-wrap rounded w-3/4 h-full lg:w-1/4 items-center">
               <Image
                 className="cursor-pointer"
@@ -91,7 +97,7 @@ const Footer = () => {
                 {ytData.title}
               </h1>
             </div>
-          )}
+          )} */}
         </div>
       </div>
       <div className="flex justify-center border-black-200 pb-1 cursor-pointer">

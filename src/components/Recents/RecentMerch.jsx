@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react"
+import Link from "next/link"
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi"
 
 import { ReadDB } from "../../utility/Firebase"
@@ -35,6 +36,15 @@ const RecentMerch = () => {
         {data.map((item) => {
           return <MerchCard item={item} key={item.imgURL} />
         })}
+        <div className="flex h-32 self-center flex-col p-3">
+          <div className="bg-white rounded-lg bg-cover w-48 shadow-lg overflow-hidden flex-1 flex flex-wrap justify-center items-center">
+            <Link href="/merch">
+              <a className="text-blue-400 text-xl self-center font-bold">
+                More ...
+              </a>
+            </Link>
+          </div>
+        </div>
       </div>
     </>
   )

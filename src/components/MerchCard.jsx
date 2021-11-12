@@ -5,10 +5,10 @@ const MerchCard = ({ item, onClick }) => {
   return (
     <div className="m-8 lg:m-2 " onClick={onClick}>
       <div className="flex max-w-xs bg-white shadow-lg rounded-lg ">
-        <div className="w-full bg-cover bg-local">
+        <div className="w-48 bg-cover bg-local">
           <Image
             src={item.imgURL}
-            layout="responsive"
+            // layout="responsive"
             height="250"
             width="250"
           />

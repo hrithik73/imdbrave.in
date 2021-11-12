@@ -4,6 +4,7 @@ import first from "../../public/merch/01.png"
 
 export const socialData = {
  facebook: "https://facebook.com/imdbrave",
+ mail: "mailto:officialdbrave@gmail.com",
  instagram: "https://instagram.com/imdbrave",
  youtube: "https://www.youtube.com/c/DBRAVE",
  spotify: "https://open.spotify.com/artist/65dbw0TVlUczY6Yg8wvnHT?si=EptRuTBWRBio1zcOxY1ITg",

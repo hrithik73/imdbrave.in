@@ -71,7 +71,7 @@ const Footer = () => {
                 height={35}
               />
               <SocialButton
-                href={socialData}
+                href={socialData.mail}
                 path="/social/mail.svg"
                 height={25}
               />

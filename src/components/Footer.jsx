@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
-import Image from "next/image"
-// import Link from "next/link"
+// import Image from "next/image"
 
 import { FaPhoneAlt } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
@@ -9,38 +8,7 @@ import { socialData, team } from "../data/data"
 import SocialButton from "./SocialButton"
 
 const Footer = () => {
-  const [ytData, setTtData] = useState({ title: "", thumbnail: "", link: "" })
-
-  // const requestOptions = {
-  //   method: "GET",
-  //   redirect: "follow",
-  // }
-
-  // const getLatestData = () => {
-  //   console.log("Called")
-  //   fetch(
-  //     "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=UCSCEDbpHxxn1urTJtILWqdw&maxResults=10&order=date&type=video&key=AIzaSyDV8Wo80C8S6_Udb_vUKfLRmcwMqIvUFu4",
-  //     requestOptions
-  //   )
-  //     .then((response) => response.json())
-  //     .then((result) =>
-  //       setTtData({
-  //         title: result.items[0].snippet.title,
-  //         link: result.items[0].id.videoId,
-  //         thumbnail: result.items[0].snippet.thumbnails.high.url,
-  //       })
-  //     )
-  //     .catch((error) => console.log("error", error))
-  // }
-
-  // useEffect(() => {
-  //   // console.log("UseEffect")
-  //   const today = new Date().toJSON().slice(0, 10).replace(/-/g, "/")
-  //   const isDiff = localStorage.getItem("today") != today
-  //   // localStorage.setItem("today", today)
-  //   isDiff && getLatestData()
-  //   console.log(isDiff)
-  // }, [])
+  // const [ytData, setTtData] = useState({ title: "", thumbnail: "", link: "" })
 
   return (
     <>
@@ -81,23 +49,6 @@ const Footer = () => {
               />
             </div>
           </div>
-          {/* {ytData.title && (
-            <div className="flex-wrap rounded w-3/4 h-full lg:w-1/4 items-center">
-              <Image
-                className="cursor-pointer"
-                height={360}
-                width={480}
-                objectFit="cover"
-                src={ytData.thumbnail}
-                onClick={() => {
-                  window.open(`https://youtube.com/watch?v=${ytData.link}`)
-                }}
-              />
-              <h1 className="text-white font-bold overflow-hidden text-sm sm:mr-3 truncate ">
-                {ytData.title}
-              </h1>
-            </div>
-          )} */}
         </div>
       </div>
       <div className="flex justify-center border-black-200 pb-1 cursor-pointer">

@@ -69,7 +69,7 @@ const Header = ({ current }) => {
                             "px-3 py-2 rounded-md text-sm font-bold"
                           )}
                         >
-                          {item.name}
+                          {item.name.toUpperCase()}
                         </a>
                       </Link>
                     ))}
@@ -92,7 +92,7 @@ const Header = ({ current }) => {
                     "block px-3 py-2 rounded-md text-base font-medium"
                   )}
                 >
-                  {item.name}
+                  {item.name.toUpperCase()}
                 </a>
               ))}
             </div>

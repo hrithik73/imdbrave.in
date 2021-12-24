@@ -4,7 +4,7 @@ import SocialButton from "./SocialButton"
 
 const StreamCard = () => {
   return (
-    <div className="align-center  rounded overflow-hidden m-3 p-3 flex justify-evenly border-2 border-blue-900 border-opacity-40 ">
+    <div className="align-center  rounded overflow-hidden m-3 p-3 flex justify-evenly border-2  border-blue-900 border-opacity-40 ">
       <SocialButton
         href={socialData.spotify}
         path="/social/spotify.svg"

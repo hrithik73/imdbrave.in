@@ -58,10 +58,15 @@ const HomePage = () => {
               </h1>
               <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 ">
                 Md. Danish Iqbal, who goes with his stage name "Dbrave" is an
-                indian singer and rapper from Darbhanga(Bihar).Who has a large
-                base of subscriber on youtube and have many super hit song by
-                his name."Zila Darbhanga" is one the best hit anthem of all time
-                in Bihar
+                Indian singer and rapper from Darbhanga(Bihar). Dbrave is one of
+                the biggest independent artists from Bihar having a huge
+                subscriber count on youtube and has many super hit songs by his
+                name. "Zila Darbhanga" is one the best hit anthem of all time in
+                Bihar. And recently, after a wait of 1 year, he has released the
+                "Darbhanga anthem(chapter 2)" on his Channel. He has received
+                tremendous love and recognition from his 1st singing original "
+                tum ho sukoon", which was one of his dream projects from the
+                album "Be the Brave".
               </p>
             </div>
           </main>
@@ -92,7 +97,7 @@ const HomePage = () => {
           <RecentSongs />
         </div>
         <div className="h-full mt-32 lg:px-20 ">
-          <h2 className="text-center font-bold">LETEST MERCH</h2>
+          <h2 className="text-center font-bold">LATEST MERCH</h2>
           <RecentMerch />
         </div>
       </div>

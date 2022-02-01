@@ -11,6 +11,7 @@ const PtogressCard = ({ item, seq }) => {
   const { date, imgURL, title, subtitle } = item
   // console.log(date)
   const pos = seq % 2 === 0 ? "right" : "left"
+
   return (
     <VerticalTimeline>
       <VerticalTimelineElement

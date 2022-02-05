@@ -9,19 +9,16 @@ import {
   limit,
 } from "firebase/firestore"
 
-import { keys } from "../../key.js"
-
 const firebaseConfig = {
-  apiKey: keys.APIKEY,
-  authDomain: keys.AUTH_DOMAIN,
-  projectId: keys.PROJECT_ID,
-  storageBucket: keys.STORAGE_BUCKET,
-  messagingSenderId: keys.MESSAGING_SENDERID,
-  appId: keys.APP_ID,
-  measurementId: keys.MEASUREMENT_ID,
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_APIKEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDERID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 }
 
-// firebase.initializeApp(firebaseConfig)
 const app = firebase.initializeApp(firebaseConfig)
 export const storage = getStorage(app)
 export const db = getFirestore()
@@ -31,7 +28,6 @@ export const ReadDB = async (lim, coll) => {
     ? query(collection(db, coll), orderBy("timeInterval", "desc"), limit(lim))
     : query(collection(db, coll), orderBy("timeInterval", "desc"))
 
-  // const q =
   const querySnapshot = await getDocs(q)
 
   const songData = []

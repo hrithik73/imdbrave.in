@@ -20,7 +20,7 @@ export const socialData = {
 export const merch = {
   first: {
     id: "01",
-    title: "Zilla Darbhanga",
+    title: "Zila Darbhanga",
     imgURL: '/merch/1.png',
     price: "380",
     link: "https://teeshopper.in/products/ZILA-DARBHANGA",
@@ -36,7 +36,7 @@ export const merch = {
   },
   third: {
     id: "03",
-    title: "T-shirt",
+    title: "Be The Brave",
     imgURL: "/merch/3.png",
     price: "370",
     link: "https://teeshopper.in/products/BE-THE-BRAVE-SPECIAL-MERCH",

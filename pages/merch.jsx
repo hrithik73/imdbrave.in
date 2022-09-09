@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-
 import { ReadDB } from "../src/utility/Firebase"
 import Header from "../src/components/Header"
 import MerchCard from "../src/components/MerchCard"
@@ -22,7 +21,7 @@ const Merch = () => {
   return (
     <>
       <Header current="Merch" />
-      <div className="lg:flex flex-wrap justify-center align-center flex-1">
+      <div className="lg:flex md:flex sm:m-20 flex-wrap gap-20 m-10 justify-center align-center flex-1">
         <MerchCard item={merch.first} />
         <MerchCard item={merch.second} />
         <MerchCard item={merch.third} />

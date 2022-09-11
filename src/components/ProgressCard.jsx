@@ -25,7 +25,7 @@ const PtogressCard = ({ item, seq }) => {
       >
         <h3 className="text-2xl font-bold underline pb-2">{title}</h3>
         {imgURL && (
-          <img src={imgURL} className="h-1/2 w-1/2 self-center rounded" />
+          <img src={imgURL} className="h-1/2 w-full self-center rounded" />
         )}
         <p>{subtitle}</p>
       </VerticalTimelineElement>

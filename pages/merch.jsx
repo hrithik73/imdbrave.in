@@ -18,7 +18,7 @@ const Merch = () => {
   }
   return (
     <>
-      <div className="m-10 lg:m-20">
+      <div className="m-10 lg:flex flex-row flex-wrap gap-10 ">
         <MerchCard item={merch.first} />
         <MerchCard item={merch.second} />
         <MerchCard item={merch.third} />

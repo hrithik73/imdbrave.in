@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { ReadDB } from "../src/utility/Firebase"
-import Header from "../src/components/Header"
 import MerchCard from "../src/components/MerchCard"
 import { merch } from "../src/data/data"
-import Footer from "../src/components/Footer"
 import LoadingScreen from "../src/components/LoadingScreen"
 
 const Merch = () => {
@@ -20,8 +18,7 @@ const Merch = () => {
   }
   return (
     <>
-      <Header current="Merch" />
-      <div className="lg:flex md:flex sm:m-20 flex-wrap gap-20 m-10 justify-center align-center flex-1">
+      <div className="m-10 lg:m-20">
         <MerchCard item={merch.first} />
         <MerchCard item={merch.second} />
         <MerchCard item={merch.third} />
@@ -29,7 +26,6 @@ const Merch = () => {
           return <MerchCard item={item} key={item.imgURL} />
         })}
       </div>
-      <Footer />
     </>
   )
 }

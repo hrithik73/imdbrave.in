@@ -12,7 +12,6 @@ const SongCard = ({ item }) => {
             width={200}
             src={item.imgURL}
             // loader={ <h2>Loading</h2>}
-            //
           />
         </div>
         <div className="w-4/6 flex flex-wrap align-center p-4 ">
@@ -22,9 +21,7 @@ const SongCard = ({ item }) => {
           <p className="text-gray-400 font-semibold truncate text-base text-center">
             Artist(s):{item.artist}
           </p>
-          {/* <p className="mt-2 text-gray-600 text-sm truncate">
-            Artist(s):{item.artist}
-          </p> */}
+
           <div className="flex item-center justify-between mt-3">
             <button
               className="flex mx-3 px-3 py-2 bg-red-600 text-white text-xs font-bold uppercase rounded"

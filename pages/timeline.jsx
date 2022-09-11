@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react"
 
-import Header from "../src/components/Header"
-import Footer from "../src/components/Footer"
 import ProgressCard from "../src/components/ProgressCard"
 import { ReadDB } from "../src/utility/Firebase"
 
@@ -16,15 +14,11 @@ const Timeline = () => {
 
   return (
     <>
-      <Header current="Timeline" />
-
       {data.map((item, seq) => {
-        //! Progress in Timeline
         return (
           <ProgressCard item={item} key={item.timeInterval} seq={seq + 1} />
         )
       })}
-      <Footer />
     </>
   )
 }

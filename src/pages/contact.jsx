@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 
 import emailjs from "emailjs-com"
-import Team from "../src/components/Team"
+import Team from "../components/Team"
 const contact = () => {
   const form = useRef()
 

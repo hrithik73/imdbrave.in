@@ -3,10 +3,10 @@ import "react-image-gallery/styles/css/image-gallery.css"
 import Head from "next/head"
 import ImageGallery from "react-image-gallery"
 
-import CardContainer from "../src/components/CardContainer"
-import RecentSongs from "../src/components/Recents/RecentSongs"
-import RecentMerch from "../src/components/Recents/RecentMerch"
-import StreamCard from "../src/components/StreamCard"
+import CardContainer from "../components/CardContainer"
+import RecentSongs from "../components/Recents/RecentSongs"
+import RecentMerch from "../components/Recents/RecentMerch"
+import StreamCard from "../components/StreamCard"
 
 const images = [
   {

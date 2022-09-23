@@ -1,7 +1,7 @@
 import React from "react"
 import "tailwindcss/tailwind.css"
-import Footer from "../src/components/Layout/Footer"
-import Header from "../src/components/Layout/Header"
+import Header from "../components/Layout/Header"
+import Footer from "../components/Layout/Footer"
 
 function MyApp({ Component, pageProps }) {
   return (

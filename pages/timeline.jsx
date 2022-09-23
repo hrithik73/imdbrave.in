@@ -3,15 +3,7 @@ import React, { useEffect, useState } from "react"
 import ProgressCard from "../src/components/ProgressCard"
 import { ReadDB } from "../src/utility/Firebase"
 
-const Timeline = () => {
-  const [data, setData] = useState([])
-
-  useEffect(async () => {
-    const data = await ReadDB(null, "timeline")
-    // console.log(data)
-    setData(data)
-  }, [])
-
+const Timeline = ({ data }) => {
   return (
     <>
       {data.map((item, seq) => {
@@ -23,3 +15,10 @@ const Timeline = () => {
   )
 }
 export default Timeline
+
+export async function getServerSideProps(context) {
+  const data = await ReadDB(null, "timeline")
+  return {
+    props: { data }, // will be passed to the page component as props
+  }
+}

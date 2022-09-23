@@ -2,7 +2,7 @@ import React from "react"
 
 const MerchCard = ({ item }) => {
   return (
-    <div class="lg:m-10 mb-10 w-full w-22 md:max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div class="m-10 max-w-sm mb-10 md:max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
       <a href="#">
         <img class="rounded-t-lg" src={item.imgURL} alt="" />
       </a>

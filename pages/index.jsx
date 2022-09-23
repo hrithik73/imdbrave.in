@@ -7,7 +7,6 @@ import CardContainer from "../src/components/CardContainer"
 import RecentSongs from "../src/components/Recents/RecentSongs"
 import RecentMerch from "../src/components/Recents/RecentMerch"
 import StreamCard from "../src/components/StreamCard"
-import { useEffect, useState } from "react"
 
 const images = [
   {
@@ -33,14 +32,6 @@ const images = [
 ]
 
 const HomePage = () => {
-  const [today, setToday] = useState(
-    new Date().toJSON().slice(0, 10).replace(/-/g, "/")
-  )
-
-  useEffect(() => {
-    localStorage.setItem("today", today)
-  }, [])
-
   return (
     <>
       <Head>

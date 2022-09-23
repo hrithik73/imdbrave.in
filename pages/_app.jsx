@@ -1,3 +1,4 @@
+import React from "react"
 import "tailwindcss/tailwind.css"
 import Footer from "../src/components/Layout/Footer"
 import Header from "../src/components/Layout/Header"

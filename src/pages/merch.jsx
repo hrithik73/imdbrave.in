@@ -1,8 +1,8 @@
 import React from "react"
-import { ReadDB } from "../src/utility/Firebase"
-import MerchCard from "../src/components/MerchCard"
-import { merch } from "../src/data/data"
-import LoadingScreen from "../src/components/LoadingScreen"
+import { ReadDB } from "../utility/Firebase"
+import MerchCard from "../components/MerchCard"
+import { merch } from "../data/data"
+import LoadingScreen from "../components/LoadingScreen"
 
 const Merch = ({ data }) => {
   if (!data) {

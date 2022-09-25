@@ -22,12 +22,12 @@ const RecentMerch = () => {
   return (
     <>
       <div className="flex justify-between">
-        <button onClick={() => scroll(-400)}>
+        {/* <button onClick={() => scroll(-400)}>
           <BiLeftArrow size={20} />
         </button>
         <button onClick={() => scroll(400)}>
           <BiRightArrow size={20} />
-        </button>
+        </button> */}
       </div>
       <div className="flex overflow-x-scroll" ref={ref}>
         <MerchCard item={merch.first} />

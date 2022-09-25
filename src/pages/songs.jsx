@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react"
-import SongCard from "../src/components/SongCard"
-
-import { ReadDB } from "../src/utility/Firebase"
-import LoadingScreen from "../src/components/LoadingScreen"
+import SongCard from "../components/SongCard"
+import { ReadDB } from "../utility/Firebase"
+import LoadingScreen from "../components/LoadingScreen"
 
 const recents = ({ data }) => {
   if (!data) {

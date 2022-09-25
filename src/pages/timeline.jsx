@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 
-import ProgressCard from "../src/components/ProgressCard"
-import { ReadDB } from "../src/utility/Firebase"
+import ProgressCard from "../components/ProgressCard"
+import { ReadDB } from "../utility/Firebase"
 
 const Timeline = ({ data }) => {
   return (

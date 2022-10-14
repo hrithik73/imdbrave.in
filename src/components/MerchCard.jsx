@@ -1,8 +1,18 @@
 import React from "react"
+import { motion } from "framer-motion"
 
 const MerchCard = ({ item }) => {
   return (
-    <div className="m-10 max-w-sm mb-10 md:max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0, 0.71, 0.2, 1.01],
+      }}
+      className="m-10 max-w-sm mb-10 md:max-w-xs bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+    >
       <a href="#">
         <img className="rounded-t-lg" src={item.imgURL} alt="" />
       </a>
@@ -36,7 +46,7 @@ const MerchCard = ({ item }) => {
           </svg>
         </a>
       </div>
-    </div>
+    </motion.div>
   )
 }
 export default MerchCard

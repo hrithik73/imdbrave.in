@@ -9,10 +9,14 @@ const RecentMerch = () => {
   const ref = useRef(null)
   const [data, setData] = useState([])
 
-  useEffect(async () => {
+  const getData = async () => {
     const data = await ReadDB(5, "merchData")
     // console.log(data)
     setData(data)
+  }
+
+  useEffect(() => {
+    getData()
   }, [])
 
   const scroll = (scrollOffset) => {

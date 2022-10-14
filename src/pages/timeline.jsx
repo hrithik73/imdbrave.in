@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 
 import ProgressCard from "../components/ProgressCard"
 import { ReadDB } from "../utility/Firebase"

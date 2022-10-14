@@ -36,14 +36,6 @@ const CardContainer = () => {
 
   return (
     <>
-      <div className="flex justify-between">
-        <button onClick={() => scroll(-400)}>
-          <BiLeftArrow size={20} />
-        </button>
-        <button onClick={() => scroll(400)}>
-          <BiRightArrow size={20} />
-        </button>
-      </div>
       <div
         className="flex overflow-x-scroll md:flex-row sm:flex-row "
         ref={ref}

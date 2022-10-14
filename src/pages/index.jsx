@@ -61,7 +61,7 @@ const HomePage = () => {
             </div>
           </main>
         </div>
-        <div className="lg:absolute lg:h-1/3 lg:inset-y-0 lg:right-0  lg:w-1/2 lg:top-0">
+        {/* <div className="lg:absolute lg:h-1/3 lg:inset-y-0 lg:right-0  lg:w-1/2 lg:top-0">
           <ImageGallery
             items={images}
             autoPlay={true}
@@ -71,7 +71,7 @@ const HomePage = () => {
             showPlayButton={false}
             showBullets
           />
-        </div>
+        </div> */}
         <div className="items-center flex justify-center lg:justify-between lg:pl-20 pt-20 ">
           <div className="bg-white flex-col w-4/5 lg:w-1/4">
             <h4 className="text-center max-w-sm font-bold">STREAM AT</h4>

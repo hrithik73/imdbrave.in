@@ -6,19 +6,30 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/server": "^11.10.0",
     "@firebase/storage": "^0.8.2",
     "@frogress/line": "^1.0.1",
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.4",
+    "@mantine/carousel": "^5.9.5",
+    "@mantine/core": "^5.9.5",
+    "@mantine/hooks": "^5.9.5",
+    "@mantine/next": "^5.9.5",
+    "@tabler/icons": "^1.117.0",
+    "atropos": "^1.0.2",
     "emailjs-com": "^3.2.0",
+    "embla-carousel-react": "^7.0.5",
     "firebase": "^9.0.2",
+    "framer-motion": "^7.5.3",
     "next": "latest",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^4.2.0",
     "react-image-gallery": "^1.2.7",
     "react-vertical-timeline-component": "^3.3.3",
-    "styled-components": "^5.3.1"
+    "styled-components": "^5.3.1",
+    "swiper": "^8.4.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",

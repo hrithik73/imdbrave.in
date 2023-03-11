@@ -1,9 +1,7 @@
-import React, { useState, useRef } from "react"
-import Header from "../src/components/Header"
+import React, { useRef } from "react"
 
 import emailjs from "emailjs-com"
-import Team from "../src/components/Team"
-import Footer from "../src/components/Footer"
+import Team from "../components/Team"
 const contact = () => {
   const form = useRef()
 
@@ -47,7 +45,6 @@ const contact = () => {
 
   return (
     <>
-      <Header current="Contact" />
       <div className="flex justify-center py-10 px-5" onSubmit={handleSubmit}>
         <form ref={form} className="w-full max-w-lg">
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -119,7 +116,6 @@ const contact = () => {
       </div>
 
       <Team />
-      <Footer />
     </>
   )
 }

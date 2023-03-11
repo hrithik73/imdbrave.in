@@ -9,10 +9,14 @@ const RecentMerch = () => {
   const ref = useRef(null)
   const [data, setData] = useState([])
 
-  useEffect(async () => {
+  const getData = async () => {
     const data = await ReadDB(5, "merchData")
     // console.log(data)
     setData(data)
+  }
+
+  useEffect(() => {
+    getData()
   }, [])
 
   const scroll = (scrollOffset) => {
@@ -22,12 +26,12 @@ const RecentMerch = () => {
   return (
     <>
       <div className="flex justify-between">
-        <button onClick={() => scroll(-400)}>
+        {/* <button onClick={() => scroll(-400)}>
           <BiLeftArrow size={20} />
         </button>
         <button onClick={() => scroll(400)}>
           <BiRightArrow size={20} />
-        </button>
+        </button> */}
       </div>
       <div className="flex overflow-x-scroll" ref={ref}>
         <MerchCard item={merch.first} />

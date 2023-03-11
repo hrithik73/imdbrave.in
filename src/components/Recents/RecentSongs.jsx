@@ -9,10 +9,14 @@ const RecentSongs = () => {
   const ref = useRef(null)
   const [data, setData] = useState([])
 
-  useEffect(async () => {
+  const getData = async () => {
     const data = await ReadDB(5, "songs")
     // console.log(data)
     setData(data)
+  }
+
+  useEffect(() => {
+    getData()
   }, [])
 
   const scroll = (scrollOffset) => {
